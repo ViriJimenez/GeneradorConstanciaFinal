@@ -15,6 +15,7 @@ class EventoFactory extends Factory
     {
         return [
             'nombre'=>$this->faker->streetAddress(),
+            'tipo'=>$this->faker->text(),
             'descripcion'=>$this->faker->text(),
         ];
     }

@@ -11,16 +11,16 @@ class Docente extends Model
     use HasFactory;
     protected $guarded =[];
 
-    public function ponentes(){
-        return $this->belongsToMany(Ponente::class);
-    }
+    // public function ponentes(){
+    //     return $this->belongsToMany(Ponente::class);
+    // }
 
     // public function departamento(){
     //     return $this->belongsTo(Categoria::class);
     // }
-    // public function conferencias(){
-    //     return $this->hasMany('App\Models\Conferencia');
-    // }
+    public function conferencias(){
+        return $this->hasMany('App\Models\Conferencia');
+    }
 
     public function departamento(){
         return $this->belongsTo('App\Models\Departamento');

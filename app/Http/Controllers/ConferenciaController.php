@@ -12,28 +12,29 @@ class ConferenciaController extends Controller
 {
     public function index()
     {
-        $conferencias = Conferencia::paginate(15);
+        $conferencias = Conferencia::paginate(5);
         return view ('conferencia.index', compact('conferencias'));
     }
 
 
     public function create()
     {
+        $ponentes = Ponente::all();
+        return view('conferencia.create', compact('ponentes'));
+
         $docentes = Docente::all();
         return view('conferencia.create', compact('docentes'));
         //return view('conferencia.create')->with('docentes',$docentes);
 
-        $ponentes = Ponente::all();
-        return view('conferencia.create', compact('ponentes'));
         //return view('conferencia.create')->with('ponentes',$ponentes);
     }
 
 
     public function store(Request $request)
     {
-        //return $request;
-        Conferencia::create($request->all());
-        return redirect('conferencias')->with('mensaje', 'Registro insertado correctamente!!');
+        return $request;
+        // Conferencia::create($request->all());
+        // return redirect('conferencias')->with('mensaje', 'Registro insertado correctamente!!');
     }
 
 

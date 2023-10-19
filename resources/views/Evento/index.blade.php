@@ -11,7 +11,7 @@
                     </button>
                 </div>
             @endif
-            <h1 class = "text-center">LISTADO DE EVENTOS</h1>
+            <h1 class = "text-center font-bold">LISTADO DE EVENTOS</h1>
             <hr>
             <div class="row">
                 <div class="col">
@@ -21,16 +21,18 @@
             <br><br>
             <table class="table table-light table-striped">
                 <thead>
-                    <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th>DESCRIPCION</th>
-                    <th colspan="2">OPERACIONES</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">ID</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">TIPO DE EVENTO</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">NOMBRE</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">DESCRIPCION</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0"colspan="2">OPERACIONES</th>
                 </thead>
 
                 <tbody>
                     @foreach ($eventos as $e)
                     <tr>
                         <td>{{$e->id}}</td>
+                        <td>{{$e->tipo}}</td>
                         <td><a href="{{route('eventos.show', $e)}}">{{$e->nombre}}</a></td>
                         <td>{{$e->descripcion}}</a></td>
                         <td><a class = "btn btn-warning" href="{{route('eventos.edit', $e)}}">Editar <i class="bi bi-pen-fill"></i></a></td>

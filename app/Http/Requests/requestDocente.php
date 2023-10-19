@@ -19,10 +19,11 @@ class requestDocente extends FormRequest
             'apaterno' => 'required|min:3|max:50',
             'amaterno' => 'required|min:3|max:50',
             'correo' => 'required|min:3|max:100',
+            //'password' => 'required|min:3|max:100',
             'telefono' => 'required|min:3|max:15',
             'direccion' => 'required|min:3|max:100',
             'edad' => 'required|min:1|max:3',
-            'foto' => 'required|max:10000|mimes:jpg,png,jpeg,gif',
+            //'foto' => 'required|max:10000|mimes:jpg,png,jpeg,gif',
         ];
     }
 
@@ -34,6 +35,7 @@ class requestDocente extends FormRequest
             'apaterno' => 'Apellido paterno',
             'amaterno' => 'Apellido materno',
             'correo' => 'Correo Electrónico',
+            'password' => 'Contraseña',
             'telefono' => 'Teléfono',
             'direccion' => 'Dirección',
             'edad' => 'Edad',
@@ -43,7 +45,7 @@ class requestDocente extends FormRequest
     public function messages()
     {
         return[
-            'foto.required' => 'Tienes que colocar la Fotografía'
+            //'foto.required' => 'Tienes que colocar la Fotografía'
         ];
     }
 }

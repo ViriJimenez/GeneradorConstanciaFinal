@@ -17,7 +17,7 @@ class requestPonente extends FormRequest
         return [
             'nombre' => 'required|min:3|max:20',
             'clave' => 'required|min:3|max:18',
-            'correo' => 'required|min:3|max:30',
+            'correo' => 'required|min:3|max:100',
         ];
     }
 

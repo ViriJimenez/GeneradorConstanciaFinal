@@ -11,7 +11,7 @@ class InstructorController extends Controller
 
     public function index()
     {
-        $instructors = Instructor::paginate(10);
+        $instructors = Instructor::paginate(5);
         return view ('instructor.index', compact('instructors'));
     }
 

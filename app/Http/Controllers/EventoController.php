@@ -11,7 +11,7 @@ class EventoController extends Controller
 
     public function index()
     {
-        $eventos= Evento::paginate(20);
+        $eventos= Evento::paginate(5);
         return view ('evento.index', compact('eventos'));
 
     }
@@ -45,6 +45,7 @@ class EventoController extends Controller
     public function update(requestEvento $request, Evento $evento)
     {
         $evento->nombre = $request->nombre;
+        $evento->tipo = $request->tipo;
         $evento->descripcion = $request->descripcion;
         $evento->save();
         return redirect('eventos')->with('mensaje', 'Registro actualizado correctamente!!');

@@ -55,11 +55,12 @@
                             <div class="mb-3">
                                 <label for="docente_id" class="form-label">Moderador encargado:</label>
                                 <select class="form-control" name="docente_id">
-                                @foreach ($docentes as $d)
+                                {{-- @foreach ($docentes as $d)
                                     <option value="{{$d ->id}}" {{isset($conferencia->docente_id)?($conferencia->docente_id==$d->id?'selected': ''):''}}>{{$d ->nombre}}</option>
-                                @endforeach
+                                @endforeach --}}
                                 </select>
                             </div>
+                            <br><br>
                             <input class ="btn btn-success float-left" type="submit" value= "{{$modo}} Registro">
                             <a class ="btn btn-secondary float-right" href="{{route('conferencias.index')}}">Regresar</a>
                     </div>

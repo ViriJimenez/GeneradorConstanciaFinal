@@ -1,73 +1,83 @@
-@extends('layouts.app')
+@extends('layouts.layoutWelcome')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+@section('contenido')
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Dirección de correo electrónico') }}</label>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/script.js"></script>
+</head>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+<body>
+<br><br>
+    <section class="form_wrap">
+        <section class="cantact_info">
+            <section class="info_title">
+                <span><i class="bi bi-person-circle"></i></span>
+                    <h2>INSTITUTO TECNOLÓGICO DE SALINA CRUZ </h2>
+                </section>
+                <section class="info_items">
+                    <p><i class="bi bi-telephone-fill"> +52 (971) 716-3242</i></p>
+                    <p><i class="bi bi-envelope-fill"> dir_salinacruz@tecnm.mx </i></p>
+                    <p><i class="bi bi-globe2"> www.salinacruz.tecnm.mx</i></p>
+                    <p><i class="bi bi-facebook"> TecNM campus Salina Cruz</i></p>
+                    <p><i class="bi bi-twitter"> TecNM campus Salina Cruz</i></p>
+                </section>
+            </section>
+
+            <form class="form_contact" method="POST" action="{{ route('login') }}">
+                <br>
+                <h2>LOGIN</h2>
+                <div class= {{ __('Login') }}></div>
+                @csrf
+                <br><br>
+                <label for="email">{{ __('Dirección de correo electrónico *') }}</label>
+                <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+
+                <label for="password">{{ __('Contraseña *') }}</label>
+                <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                        <br>
+                    <div class="col-md-6 offset-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <label class="form-check-label" for="remember">
+                                {{ __('Recuerdame') }}
+                            </label>
                         </div>
+                    </div>
+                    <br><br>
+                    <button type="submit" class ="btn btn-primary float-right">
+                        {{ __('Acceder') }}
+                    </button>
+                    @if (Route::has('password.request'))
+                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('¿Olvidaste tu contraseña?') }}
+                        </a>
+                    @endif
+            </form>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+        </section>
+    </section>
+</body>
+</html>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Recuerdame') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Acceder') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('¿Olvidaste tu contraseña?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

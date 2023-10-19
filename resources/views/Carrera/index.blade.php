@@ -11,7 +11,7 @@
                     </button>
                 </div>
             @endif
-            <h1 class = "text-center">LISTADO DE CARRERAS</h1>
+            <h1 class = "text-center text-black font-bold">LISTADO DE CARRERAS</h1>
             <hr>
             <div class="row">
                 <div class="col">
@@ -19,32 +19,34 @@
                 </div>
             </div>
             <br><br>
-            <table class="table table-light table-striped">
-                <thead>
-                    <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th colspan="2">OPERACIONES</th>
-                </thead>
+            <div class="table-responsive">
+                <table class= "table table-light table-striped">
+                    <thead>
+                        <th class=" bg-blue-900 text-white border px-2 py-0">ID</th>
+                        <th class=" bg-blue-900 text-white border px-2 py-0">NOMBRE</th>
+                        <th class=" bg-blue-900 text-white border px-2 py-0" colspan="2">OPERACIONES</th>
+                    </thead>
 
-                <tbody>
-                    @foreach ($carreras as $c)
-                    <tr>
-                        <td>{{$c->id}}</td>
-                        <td><a href="{{route('carreras.show', $c)}}">{{$c->nombre}}</a></td>
-                        <td><a class = "btn btn-warning" href="{{route('carreras.edit', $c)}}">Editar <i class="bi bi-pen-fill"></i></a></td>
-                        <td>
-                            <form action="{{route('carreras.destroy',$c)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="rounded bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4" type="submit" onclick="return confirm('¿Seguro(a) que desea eliminar el registro?');">
-                                    Eliminar <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    <tbody>
+                        @foreach ($carreras as $c)
+                        <tr>
+                            <td>{{$c->id}}</td>
+                            <td><a href="{{route('carreras.show', $c)}}">{{$c->nombre}}</a></td>
+                            <td><a class = "btn btn-warning" href="{{route('carreras.edit', $c)}}">Editar <i class="bi bi-pen-fill"></i></a></td>
+                            <td>
+                                <form action="{{route('carreras.destroy',$c)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="rounded bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4" type="submit" onclick="return confirm('¿Seguro(a) que desea eliminar el registro?');">
+                                        Eliminar <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
             {{$carreras->links()}}
     </div>
 @endsection

@@ -15,8 +15,8 @@ class requestDepartamento extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|min:3|max:100',
-            'descripcion' => 'required|min:3|max:200',
+            'nombre' => 'required|min:3|max:1000',
+            'descripcion' => 'required|min:3|max:1000',
         ];
     }
 

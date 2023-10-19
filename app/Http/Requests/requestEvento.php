@@ -16,7 +16,7 @@ class requestEvento extends FormRequest
     {
         return [
             'nombre' => 'required|min:3|max:100',
-            'descripcion' => 'required|min:3|max:200',
+            'descripcion' => 'required|min:3|max:10000',
         ];
     }
 

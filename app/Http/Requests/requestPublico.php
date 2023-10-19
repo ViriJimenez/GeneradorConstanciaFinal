@@ -19,7 +19,7 @@ class requestPublico extends FormRequest
             'nombre' => 'required|min:3|max:20',
             'apaterno' => 'required|min:3|max:20',
             'amaterno' => 'required|min:3|max:20',
-            'correo' => 'required|min:3|max:30',
+            'correo' => 'required|min:3|max:100',
             'telefono' => 'required|min:3|max:15',
             'direccion' => 'required|min:3|max:80',
             'edad' => 'required|min:1|max:3',

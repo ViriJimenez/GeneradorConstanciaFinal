@@ -20,6 +20,7 @@ class CursoFactory extends Factory
             'fecha'=>$this->faker->date($format = 'Y-m-d', $max = 'now'),
             'hora'=>$this->faker->time($format = 'H:i:s', $max = 'now'),
             'instructor_id'=>$this->faker->randomDigitNot(0),
+            'estado'=>$this->faker->randomDigitNot(0),
         ];
     }
 }

@@ -14,8 +14,8 @@ class requestConferencia extends FormRequest
     public function rules()
     {
         return [
-            'titulo' => 'required|min:3|max:100',
-            'descripcion' => 'required|min:3|max:200',
+            'titulo' => 'required|min:3|max:10000',
+            'descripcion' => 'required|min:3|max:10000',
             'modalidad' => 'required|min:3|max:50',
             'fecha' => 'required|min:3|max:20',
             'hora' => 'required|min:3|max:20',

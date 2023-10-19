@@ -11,7 +11,7 @@ class PonenteController extends Controller
 
     public function index()
     {
-        $ponentes = Ponente::paginate(10);
+        $ponentes = Ponente::paginate(5);
         return view ('ponente.index', compact('ponentes'));
     }
 

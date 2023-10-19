@@ -11,7 +11,7 @@
                     </button>
                 </div>
             @endif
-            <h1 class = "text-center">LISTADO DE INSTRUCTORES</h1>
+            <h1 class = "text-center font-bold">LISTADO DE INSTRUCTORES</h1>
             <hr>
             <div class="row">
                 <div class="col">
@@ -21,14 +21,14 @@
             <br><br>
             <table class="table table-light table-striped">
                 <thead>
-                    <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO PATERNO</th>
-                    <th>APELLIDO MATERNO</th>
-                    <th>CORREO</th>
-                    <th>TELEFONO</th>
-                    <th>TITULO</th>
-                    <th colspan="2">OPERACIONES</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">ID</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">NOMBRE</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">APELLIDO PATERNO</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">APELLIDO MATERNO</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">CORREO</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">TELEFONO</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0">TITULO</th>
+                    <th class=" bg-blue-900 text-white border px-2 py-0" colspan="2">OPERACIONES</th>
                 </thead>
                 <tbody>
                     @foreach ($instructors as $i)
